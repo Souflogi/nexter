@@ -1,0 +1,79 @@
+.header {
+  background-color: $color-grey-dark-1;
+  grid-column: full-start / col-end 6;
+
+  @media only screen and (max-width: $bp-meduim) {
+    grid-column: full-start / full-end;
+  }
+  
+  background-image: linear-gradient(
+      rgba($color-secondary, 0.9),
+      rgba($color-secondary, 0.5)
+    ),
+    url("/img/story-2.jpeg");
+  background-position: center;
+  background-size: cover;
+
+  display: grid;
+  grid-template-rows: 1fr min-content min-max(min-content, 6rem) 1fr min-content;
+  grid-template-columns: minmax(min-content, max-content);
+  grid-row-gap: 1.5rem;
+  justify-content: center;
+
+  padding: 8rem;
+  padding-top: 4rem;
+
+  &__logo {
+    height: 3rem;
+    justify-self: center;
+  }
+
+  &__seenon-text {
+    font-size: 1.5rem;
+    font-family: $font-display;
+    color: $color-grey-light-2;
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    align-items: center;
+    grid-gap: 1rem;
+    text-transform: uppercase;
+
+    &::before,
+    &::after {
+      content: "";
+      height: 1px;
+    }
+    &::after {
+      background-image: linear-gradient(
+        to right,
+        $color-grey-light-2 70%,
+        rgba(grey, 0)
+      );
+    }
+    &::before {
+      background-image: linear-gradient(
+        to left,
+        $color-grey-light-2 70%,
+        rgba(grey, 0)
+      );
+    }
+  }
+
+  &__seenon-logos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    grid-gap: 3rem;
+    justify-items: center;
+    img {
+      max-height: 2.5rem;
+      max-width: 100%;
+      filter: brightness(70%);
+    }
+  }
+
+  &__btn {
+    justify-self: start;
+    align-self: start;
+  }
+}

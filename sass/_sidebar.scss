@@ -1,0 +1,42 @@
+.sidebar {
+  background-color: $color-primary;
+  grid-column: sidebar-start / sidebar-end;
+  grid-row: 1/-1;
+  display: flex;
+  justify-content: center;
+  @media only screen and (max-width: $bp-large) {
+    grid-column: 1 / -1;
+    grid-row: 1/2;
+    justify-content: flex-end;
+  }
+}
+
+.nav-btn {
+  border: none;
+  border-radius: 0;
+  margin-top: 3rem;
+  background-color: #fff;
+  height: 2px;
+  width: 4.5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  @media only screen and (max-width: $bp-large) {
+    margin-top: 1.8rem;
+    margin-right: 1.8rem;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    background-color: #fff;
+    height: 2px;
+    width: 4.5rem;
+    display: block;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  &::after {
+    transform: translateY(2rem);
+  }
+  &::before {
+    transform: translateY(1rem);
+  }
+}
